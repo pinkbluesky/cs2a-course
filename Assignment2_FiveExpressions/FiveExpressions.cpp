@@ -15,7 +15,7 @@ int main()
 	int myId = 20399733;
 	int numLet = 5;
 
-	cout << "My last name is Li." << endl;
+	cout << "My last name is Li" << endl;
 	cout << "My Student ID is " << myId << endl;
 	cout << "The number of characters in my first name is " << numLet << endl << endl;
 
@@ -40,3 +40,17 @@ int main()
 
 	return 0;
 }
+
+/*
+-----------RUN--------------
+My last name is Li
+My Student ID is 20399733
+The number of characters in my first name is 5
+
+Expression 1: 5
+Expression 2: 0
+Expression 3: 25341.28322981366363819689
+Expression 4: 15
+Expression 5: 0.46122563418770690102
+
+--------END of RUN-----------*/
