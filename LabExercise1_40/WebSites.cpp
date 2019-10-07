@@ -11,7 +11,7 @@
 using namespace std;
 
 int main()
-{
+{   
 	cout << "Youtube:" << endl << "youtube.com" << endl << endl;
 	cout << "Facebook:" << endl << "facebook.com" << endl << endl;
 	cout << "Reddit:" << endl << "reddit.com" << endl << endl;
