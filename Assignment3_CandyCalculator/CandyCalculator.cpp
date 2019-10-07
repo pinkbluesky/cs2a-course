@@ -8,6 +8,7 @@
 */
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 #define AGE_MIN 1
@@ -36,7 +37,7 @@ int main()
 	}
 
 	cout << "What is your total height in inches?" << endl;
-	int height;
+	double height;
 	cin >> height;
 	if ((height < HEIGHT_MIN) || (height > HEIGHT_MAX))
 	{
@@ -45,7 +46,7 @@ int main()
 	}
 
 	cout << "What is your weight in pounds?" << endl;
-	int weight;
+	double weight;
 	cin >> weight;
 	if ((weight < WEIGHT_MIN) || (weight > WEIGHT_MAX))
 	{
@@ -117,8 +118,28 @@ int main()
 	{
 		cout << "female";
 	}
-	cout << " with those measurements should eat " << candyBars 
+	cout << " with those measurements should eat " << setprecision(2) << fixed << candyBars
 		<< " candy bars per day to maintain the same weight.";
 
 	return 0;
 }
+
+/*-------------RUN 1-------------------
+This program will calculate the number of 230 calorie candy bars to eat to maintain your weight.
+What is your age in years?
+35
+What is your total height in inches?
+65.9
+What is your weight in pounds?
+170
+Enter M for male calculation and F for female calculation.
+M
+Are you:
+		A. Sedentary
+		B. Somewhat active (exercise ocasionally)
+		C. Active (exercise 3-4 days per week)
+		D. Highly active (exercise everday)
+Enter A, B, C, or D.
+C
+A male with those measurements should eat 10.65 candy bars per day to maintain the same weight.
+--------------END OF RUN 1------------------*/
