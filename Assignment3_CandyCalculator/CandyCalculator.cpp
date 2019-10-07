@@ -16,6 +16,11 @@ using namespace std;
 #define HEIGHT_MAX 100
 #define WEIGHT_MIN 10
 #define WEIGHT_MAX 500
+#define CANDY_BAR_CAL 230
+#define ACTIVITY_A 1.2
+#define ACTIVITY_B 1.3
+#define ACTIVITY_C 1.4
+#define ACTIVITY_D 1.5
 
 int main()
 {
@@ -57,6 +62,16 @@ int main()
 		return 0;
 	}
 
+	double BMR;
+	if (gender == 'M')
+	{
+		BMR = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
+	}
+	else // gender is F
+	{
+		BMR = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
+	}
+
 	cout << "Are you:" << endl;
 	cout << "	A. Sedentary" << endl;
 	cout <<	"	B. Somewhat active (exercise ocasionally)" << endl;
@@ -65,10 +80,45 @@ int main()
 	cout << "Enter A, B, C, or D." << endl;
 	char activity;
 	cin >> activity;
+
 	if ((activity != 'A') && (activity != 'B') && (activity != 'C') && (activity != 'D'))
 	{
 		cout << "You must enter A, B, C, or D.";
 		return 0;
 	}
+
+	double increaseBMR;
+	if (activity == 'A')
+	{
+		increaseBMR = ACTIVITY_A;
+	}
+	else if (activity == 'B')
+	{
+		increaseBMR = ACTIVITY_B;
+	}
+	else if (activity == 'C')
+	{
+		increaseBMR = ACTIVITY_C;
+	}
+	else // activity is D
+	{
+		increaseBMR = ACTIVITY_D;
+	}
+
+	BMR *= increaseBMR;
+	double candyBars = BMR / CANDY_BAR_CAL;
+
+	cout << "A ";
+	if (gender == 'M')
+	{
+		cout << "male";
+	}
+	else
+	{
+		cout << "female";
+	}
+	cout << " with those measurements should eat " << candyBars 
+		<< " candy bars per day to maintain the same weight.";
+
 	return 0;
 }
