@@ -1,7 +1,10 @@
 /*
 * Class: CS2A
-* Description: CandyCalculator calculates the number of candy bars needed for a person to maintain his/her weight. 
-* This is done by calculating BMR, which is based on gender, weight, height, age, and activity.  
+* Description: CandyCalculator calculates the 
+* number of candy bars needed for a person to 
+* maintain his/her weight. 
+* This is done by calculating BMR, which is based on 
+* gender, weight, height, age, and activity.  
 * Due date: Oct 14, 2019
 * Name: Alina Li
 * File name: CandyCalculator.cpp
@@ -25,14 +28,19 @@ using namespace std;
 
 int main()
 {
-	cout << "This program will calculate the number of " << CANDY_BAR_CAL << " calorie candy bars to eat to maintain your weight." << endl;
+	cout << "This program will calculate the number of " 
+		<< CANDY_BAR_CAL << endl
+		<< " calorie candy bars to eat to maintain your weight." 
+		<< endl;
 	
 	cout << "What is your age in years?" << endl;
 	int age;
 	cin >> age;
 	if ((age < AGE_MIN) || (age > AGE_MAX))
 	{
-		cout << "You must enter an age between " << AGE_MIN << " and " << AGE_MAX << ".";
+		cout << "You must enter an age between " << endl
+			<< AGE_MIN << " and " 
+			<< AGE_MAX << ".";
 		return 0;
 	}
 
@@ -41,7 +49,9 @@ int main()
 	cin >> height;
 	if ((height < HEIGHT_MIN) || (height > HEIGHT_MAX))
 	{
-		cout << "You must enter a height between " << HEIGHT_MIN << " and " << HEIGHT_MAX << ".";
+		cout << "You must enter a height between " << endl
+			<< HEIGHT_MIN << " and " 
+			<< HEIGHT_MAX << ".";
 		return 0;
 	}
 
@@ -50,11 +60,14 @@ int main()
 	cin >> weight;
 	if ((weight < WEIGHT_MIN) || (weight > WEIGHT_MAX))
 	{
-		cout << "You must enter a weight between " << WEIGHT_MIN << " and " << WEIGHT_MAX << ".";
+		cout << "You must enter a weight between " << endl 
+			<< WEIGHT_MIN << " and " 
+			<< WEIGHT_MAX << ".";
 		return 0;
 	}
 
-	cout << "Enter M for male calculation and F for female calculation." << endl;
+	cout << "Enter M for male calculation " << endl
+		<< "and F for female calculation." << endl;
 	char gender;
 	cin >> gender;
 	if ((gender != 'M') && (gender != 'F'))
@@ -82,7 +95,8 @@ int main()
 	char activity;
 	cin >> activity;
 
-	if ((activity != 'A') && (activity != 'B') && (activity != 'C') && (activity != 'D'))
+	if ((activity != 'A') && (activity != 'B') 
+		&& (activity != 'C') && (activity != 'D'))
 	{
 		cout << "You must enter A, B, C, or D.";
 		return 0;
@@ -118,21 +132,24 @@ int main()
 	{
 		cout << "female";
 	}
-	cout << " with those measurements should eat " << setprecision(2) << fixed << candyBars
+	cout << " with those measurements should eat " 
+		<< setprecision(2) << fixed << candyBars << endl
 		<< " candy bars per day to maintain the same weight.";
 
 	return 0;
 }
 
 /*-------------RUN 1-------------------
-This program will calculate the number of 230 calorie candy bars to eat to maintain your weight.
+This program will calculate the number of 230
+ calorie candy bars to eat to maintain your weight.
 What is your age in years?
 35
 What is your total height in inches?
 65.9
 What is your weight in pounds?
 170
-Enter M for male calculation and F for female calculation.
+Enter M for male calculation
+and F for female calculation.
 M
 Are you:
 		A. Sedentary
@@ -141,18 +158,21 @@ Are you:
 		D. Highly active (exercise everday)
 Enter A, B, C, or D.
 C
-A male with those measurements should eat 10.65 candy bars per day to maintain the same weight.
+A male with those measurements should eat 10.65
+ candy bars per day to maintain the same weight.
 --------------END OF RUN 1------------------*/
 
 /*------------RUN 2--------------------------
-This program will calculate the number of 230 calorie candy bars to eat to maintain your weight.
+This program will calculate the number of 230
+ calorie candy bars to eat to maintain your weight.
 What is your age in years?
 20
 What is your total height in inches?
 65
 What is your weight in pounds?
 125
-Enter M for male calculation and F for female calculation.
+Enter M for male calculation
+and F for female calculation.
 F
 Are you:
 		A. Sedentary
@@ -161,42 +181,49 @@ Are you:
 		D. Highly active (exercise everday)
 Enter A, B, C, or D.
 B
-A female with those measurements should eat 7.94 candy bars per day to maintain the same weight.
+A female with those measurements should eat 7.94
+ candy bars per day to maintain the same weight.
 --------------END OF RUN 2------------------*/
 
 /*----------RUN 3----------------------------
-This program will calculate the number of 230 calorie candy bars to eat to maintain your weight.
+This program will calculate the number of 230
+ calorie candy bars to eat to maintain your weight.
 What is your age in years?
 20
 What is your total height in inches?
 10
 What is your weight in pounds?
 600
-You must enter a weight between 10 and 500.
+You must enter a weight between
+10 and 500.
 --------------END OF RUN 3-------------------*/
 
 /*---------RUN 4-----------------------------
-This program will calculate the number of 230 calorie candy bars to eat to maintain your weight.
+This program will calculate the number of 230
+ calorie candy bars to eat to maintain your weight.
 What is your age in years?
 20
 What is your total height in inches?
 60
 What is your weight in pounds?
 122
-Enter M for male calculation and F for female calculation.
+Enter M for male calculation
+and F for female calculation.
 X
 You must enter either M or F.
 --------END OF RUN 4------------------------*/
 
 /*-----------RUN 5---------------------------
-This program will calculate the number of 230 calorie candy bars to eat to maintain your weight.
+This program will calculate the number of 230
+ calorie candy bars to eat to maintain your weight.
 What is your age in years?
 20
 What is your total height in inches?
 40
 What is your weight in pounds?
 120
-Enter M for male calculation and F for female calculation.
+Enter M for male calculation
+and F for female calculation.
 F
 Are you:
 		A. Sedentary
