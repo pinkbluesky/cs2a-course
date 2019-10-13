@@ -29,7 +29,7 @@ int main()
 		cout << "Menu:" << endl;
 		cout << "	P (process purchase)" << endl
 			<< "	S (shut down)" << endl;
-		cout << "Your choice: ";
+		cout << "	Your choice: ";
 
 		string inputStr;
 		getline(cin, inputStr);
@@ -59,6 +59,7 @@ int main()
 					&& ynInput[0] != 'n' && ynInput[0] != 'N')
 				{
 					cout << "*** Invalid input: Please enter Y or N ***" << endl;
+					continue;
 				}
 			}
 
