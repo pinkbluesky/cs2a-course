@@ -124,3 +124,79 @@ int countKey(string theString, char keyCharacter)
 
 	return count;
 }
+
+/*-------------RUN 1----------------------------------
+Enter a single character to act as a key: e
+
+Enter a sentence at least 4 characters long
+and at most 500 characters long:
+heelloo hEElloo!!!
+
+String with key character, 'e' masked:
+h**lloo hEElloo!!!
+
+String with 'e' removed:
+hlloo hEElloo!!!
+
+Number of occurrences of key character 'e':
+2
+
+-----------END OF RUN 1----------------------------*/
+
+/*-------------RUN 2--------------------------------
+Enter a single character to act as a key: this is a key
+
+Enter a single character to act as a key:
+
+Enter a single character to act as a key: Ffff
+
+Enter a single character to act as a key:
+
+Enter a single character to act as a key: \
+
+Enter a sentence at least 4 characters long
+and at most 500 characters long:
+
+
+Enter a sentence at least 4 characters long
+and at most 500 characters long:
+sss
+
+Enter a sentence at least 4 characters long
+and at most 500 characters long:
+""
+
+Enter a sentence at least 4 characters long
+and at most 500 characters long:
+hello /how /are /you \doing \today?
+
+String with key character, '\' masked:
+hello /how /are /you *doing *today?
+
+String with '\' removed:
+hello /how /are /you doing today?
+
+Number of occurrences of key character '\':
+2
+
+-----------END OF RUN 2-----------------------------*/
+
+/*------------RUN 3---------------------------------
+Enter a single character to act as a key: áá
+
+Enter a single character to act as a key: á
+
+Enter a sentence at least 4 characters long
+and at most 500 characters long:
+hola, comó estás? HOLA, COMÓ ESTÁS?
+
+String with key character, 'á' masked:
+hola, comó est*s? HOLA, COMO ESTAS?
+
+String with 'á' removed:
+hola, comó ests? HOLA, COMO ESTAS?
+
+Number of occurrences of key character 'á':
+1
+
+-----------END OF RUN 3-----------------------------*/
