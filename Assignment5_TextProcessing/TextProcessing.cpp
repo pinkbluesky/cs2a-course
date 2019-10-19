@@ -2,7 +2,7 @@
 * Class: CS2A
 * Description: Process a string and key character. Perform three operations
 * (replace key characters with *, delete key characters from the string, and 
-* count the number of key characters). 
+* count the number of key characters) and print the result. 
 * Due date: Oct 28, 2019, Monday
 * Name: Alina Li
 * File name: TextProcessing.cpp
