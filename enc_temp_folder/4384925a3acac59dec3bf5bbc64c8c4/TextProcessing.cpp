@@ -124,3 +124,25 @@ int countKey(string theString, char keyCharacter)
 
 	return count;
 }
+
+/*-------------RUN 1----------------------------------
+Enter a single character to act as a key: e
+
+Enter a sentence at least 4 characters long
+and at most 500 characters long:
+heelloo hEElloo!!!
+
+String with key character, 'e' masked:
+h**lloo hEElloo!!!
+
+String with 'e' removed:
+hlloo hEElloo!!!
+
+Number of occurrences of key character 'e':
+2
+
+-----------END OF RUN 1----------------------------*/
+
+/*-------------RUN 2--------------------------------
+
+-----------END OF RUN 2-----------------------------*/
