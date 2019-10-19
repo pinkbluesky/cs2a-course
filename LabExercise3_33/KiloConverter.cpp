@@ -79,3 +79,26 @@ double poundsToKilos(double pounds)
 {
 	return pounds / 2.2;
 }
+
+/*----------------RUN 1------------------
+Menu:
+1. Convert kilograms to pounds
+2. Convert pounds to kilograms
+3. Quit
+1
+Weight to be converted: 45
+45 kilograms = 99 pounds.
+Menu:
+1. Convert kilograms to pounds
+2. Convert pounds to kilograms
+3. Quit
+2
+Weight to be converted: 90
+90 pounds = 40.9091 kilograms.
+Menu:
+1. Convert kilograms to pounds
+2. Convert pounds to kilograms
+3. Quit
+3
+
+--------------END OF RUN 1---------------*/
