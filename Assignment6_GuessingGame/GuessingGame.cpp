@@ -1,8 +1,9 @@
 /*
 * Class: CS2A
-* Description: The computer randomly chooses a number for the user to guess.
-* Until the user wants to stop, the game repeats multiple times. Eventually,
-* when the game stops, statistics are printed.
+* Description: The computer randomly chooses a number for the 
+* user to guess. Until the user wants to stop, the game 
+* repeats multiple times. Eventually, when the 
+* game stops, statistics are printed.
 * Due date: November 4th, Monday, 2019
 * Name: Alina Li
 * File name: GuessingGame.cpp
@@ -14,7 +15,7 @@
 #include <iomanip>
 using namespace std;
 
-// set the highest possible number of guesses a user can make
+// set the highest number of guesses a user can make
 const int MAX_GUESSES = 1000000;
 
 // bounds for the random value selected (inclusive)
@@ -51,7 +52,7 @@ int main()
 		cin >> response;
 		cout << endl;
 
-	} while (response[0] == 'y' || response[0] == 'Y'); // when the response starts with y, continue
+	} while (response[0] == 'y' || response[0] == 'Y');
 
 	// call stats to print out stats
 	stats(games, guesses, best);
@@ -59,7 +60,8 @@ int main()
 	return 0;
 }
 
-// game method: runs one guessing game, returns the number of guesses used
+// game method: runs one guessing game
+// returns the number of guesses used
 int game()
 {
 	unsigned seed = time(0);
@@ -68,7 +70,8 @@ int game()
 	number = rand() % MAX_VAL + 1;
 
 	int numGuesses = 0;
-	cout << "I'm thinking of a number between " << MIN_VAL << " and " << MAX_VAL << "..." << endl;
+	cout << "I'm thinking of a number between " << MIN_VAL 
+		<< " and " << MAX_VAL << "..." << endl;
 	int curGuess = 0;
 	do
 	{
@@ -89,22 +92,24 @@ int game()
 			cout << "It's higher." << endl;
 		}
 
-	} while (number != curGuess); // continue while the numbers do not match
+	} while (number != curGuess); 
 
 	// print out the number of guesses made
-	cout << "You got it right in " << numGuesses << " guesses!" << endl;
+	cout << "You got it right in " << numGuesses 
+		<< " guesses!" << endl;
 	return numGuesses;
 }
 
-// stats method: receives the number of games played, the total number
-// of guesses overall, and the best score
+// stats method: receives the number of games played, 
+// the total number of guesses overall, and the best score
 // prints results
 void stats(int games, int guesses, int best)
 {
 	cout << "Overall results:" << endl;
 	cout << "Total games = " << games << endl;
 	cout << "Total guesses = " << guesses << endl;
-	cout << "Guesses / Game = " << fixed << setprecision(1) << ((double)guesses / games) << endl;
+	cout << "Guesses / Game = " << fixed << setprecision(1) 
+		<< ((double)guesses / games) << endl;
 	cout << "Best game = " << best << endl;
 }
 
