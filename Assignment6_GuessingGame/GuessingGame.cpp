@@ -34,6 +34,7 @@ int main()
 	// keeps track of the smallest number of guesses
 	int best = MAX_GUESSES;
 
+	string response = "";
 	do
 	{
 		// run 1 game with game()
@@ -73,22 +74,23 @@ int game()
 	{
 		// get a guess value from the user
 		cout << "Your guess? ";
-		cin >> guess;
+		cin >> curGuess;
 		cout << endl;
 
 		numGuesses++;
 
 		// if the guess is too high
-		if (number < guess)
+		if (number < curGuess)
 		{
 			cout << "It's lower." << endl;
 		}
 		// if the guess is too low
-		else if (number > guess)
+		else if (number > curGuess)
 		{
-			cout << "It's higher." << endl;-
+			cout << "It's higher." << endl;
 		}
-	} while (number != guess); // continue while the numbers do not match
+
+	} while (number != curGuess); // continue while the numbers do not match
 
 	// print out the number of guesses made
 	cout << "You got it right in " << numGuesses << " guesses!" << endl;
