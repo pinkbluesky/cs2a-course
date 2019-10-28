@@ -11,6 +11,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <iomanip>
 using namespace std;
 
 // set the highest possible number of guesses a user can make
@@ -39,7 +40,6 @@ int main()
 	{
 		// run 1 game with game()
 		int guessesNeeded = game();
-		cout << "You got it right in " << guessesNeeded << " guesses!" << endl;
 
 		// update stats
 		guesses += guessesNeeded;
@@ -75,7 +75,6 @@ int game()
 		// get a guess value from the user
 		cout << "Your guess? ";
 		cin >> curGuess;
-		cout << endl;
 
 		numGuesses++;
 
@@ -102,5 +101,116 @@ int game()
 // prints results
 void stats(int games, int guesses, int best)
 {
-
+	cout << "Overall results:" << endl;
+	cout << "Total games = " << games << endl;
+	cout << "Total guesses = " << guesses << endl;
+	cout << "Guesses / Game = " << fixed << setprecision(1) << ((double)guesses / games) << endl;
+	cout << "Best game = " << best << endl;
 }
+
+/*------------------RUN 1--------------------------
+I'm thinking of a number between 1 and 100...
+Your guess? 50
+It's lower.
+Your guess? 20
+It's higher.
+Your guess? 40
+It's lower.
+Your guess? 30
+It's higher.
+Your guess? 35
+It's lower.
+Your guess? 32
+It's lower.
+Your guess? 31
+You got it right in 7 guesses!
+Do you want to play again? yes
+
+I'm thinking of a number between 1 and 100...
+Your guess? 1
+It's higher.
+Your guess? 10
+It's higher.
+Your guess? 20
+It's higher.
+Your guess? 30
+It's higher.
+Your guess? 40
+It's lower.
+Your guess? 35
+You got it right in 6 guesses!
+Do you want to play again? yellow
+
+I'm thinking of a number between 1 and 100...
+Your guess? 100
+It's lower.
+Your guess? 90
+It's lower.
+Your guess? 80
+It's lower.
+Your guess? 70
+It's lower.
+Your guess? 50
+It's lower.
+Your guess? 30
+It's lower.
+Your guess? 20
+It's lower.
+Your guess? 10
+It's lower.
+Your guess? 2
+It's higher.
+Your guess? 4
+You got it right in 10 guesses!
+Do you want to play again? okay!
+
+Overall results:
+Total games = 3
+Total guesses = 23
+Guesses / Game = 7.7
+Best game = 6
+
+--------------------END OF RUN 1--------------------*/
+
+/*---------------------RUN 2------------------------
+I'm thinking of a number between 1 and 100...
+Your guess? 50
+It's higher.
+Your guess? 80
+It's lower.
+Your guess? 60
+It's higher.
+Your guess? 70
+It's lower.
+Your guess? 64
+It's higher.
+Your guess? 67
+It's lower.
+Your guess? 66
+It's lower.
+Your guess? 65
+You got it right in 8 guesses!
+Do you want to play again? y
+
+I'm thinking of a number between 1 and 100...
+Your guess? 50
+It's lower.
+Your guess? 25
+It's higher.
+Your guess? 34
+It's lower.
+Your guess? 30
+It's higher.
+Your guess? 32
+It's higher.
+Your guess? 33
+You got it right in 6 guesses!
+Do you want to play again? nothanks
+
+Overall results:
+Total games = 2
+Total guesses = 14
+Guesses / Game = 7.0
+Best game = 6
+
+--------------------END OF RUN 2--------------------*/
