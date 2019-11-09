@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabExercise3_33", "LabExerc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment6_GuessingGame", "Assignment6_GuessingGame\Assignment6_GuessingGame.vcxproj", "{E68C18FA-99CE-4C47-8041-552DB7564B94}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Midterm_30", "Midterm_30\Midterm_30.vcxproj", "{29E120B3-DCA8-4D80-9736-5634C1F72F88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,16 @@ Global
 		{E68C18FA-99CE-4C47-8041-552DB7564B94}.Release|x64.Build.0 = Release|x64
 		{E68C18FA-99CE-4C47-8041-552DB7564B94}.Release|x86.ActiveCfg = Release|Win32
 		{E68C18FA-99CE-4C47-8041-552DB7564B94}.Release|x86.Build.0 = Release|Win32
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Debug|x64.ActiveCfg = Debug|x64
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Debug|x64.Build.0 = Debug|x64
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Debug|x86.ActiveCfg = Debug|Win32
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Debug|x86.Build.0 = Debug|Win32
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Release|Any CPU.ActiveCfg = Release|Win32
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Release|x64.ActiveCfg = Release|x64
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Release|x64.Build.0 = Release|x64
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Release|x86.ActiveCfg = Release|Win32
+		{29E120B3-DCA8-4D80-9736-5634C1F72F88}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

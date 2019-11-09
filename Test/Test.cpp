@@ -1,19 +1,25 @@
 #include <iostream>
 using namespace std;
 
-void maxValue(int value1, int value2, int max)
-{
-	if (value1 > value2)
-		max = value1;
-	else
-		max = value2;
-}
+int fac(int num);
 
 int main()
 {
-	int max = 0;
-	maxValue(1, 2, max);
-	cout << "max is " << max << endl;
+	int num = 3;
+	cout << fac((-1) * num);
+	
 
 	return 0;
+}
+
+int fac(int num)
+{
+	int ans = 1;
+	if (num < 0) return -1;
+	while (num > 0)
+	{
+		ans = ans * num;
+		num--;
+	}
+	return ans;
 }
