@@ -1,8 +1,8 @@
 /*
 * Class: CS2A
-* Description: Implement a class TripleString with private member variables, 
-* constants, methods, and accessors and mutators. Test the class and its 
-* components and print output.
+* Description: Implement a class TripleString with private member 
+* variables, constants, methods, and accessors and mutators. Test
+* the class and its components and print output.
 * Due date: Monday, November 11th, 2019
 * Name: Alina Li
 * File name: Foothill.cpp
@@ -22,7 +22,7 @@ private:
 public:
 	// static constants
 	static const int MIN_LEN;
-	static const int MAX_LEN = 50;
+	static const int MAX_LEN;
 	static const string DEFAULT_STRING;
 
 	// constructors
@@ -46,11 +46,11 @@ private:
 };
 
 // TripleString static constants initialization
-const int MIN_LEN = 1;
-const int MAX_LEN = 50;
-const string DEFAULT_STRING = " (undefined) ";
+const int TripleString::MIN_LEN = 1;
+const int TripleString::MAX_LEN = 50;
+const string TripleString::DEFAULT_STRING = " (undefined) ";
 
-// client -------------------------------------------------------------------------
+// client ---------------------------------------------------------
 // main method that tests and runs the class
 int main()
 {
@@ -92,38 +92,44 @@ int main()
 	cout << "----- Mutator tests -----" << endl;
 
 	// Mutator 1: empty string
-	cout << "Attempted to change string2 of pets(TripleString1) into an empty string:" << endl;
+	cout << "Attempted to change string2 of pets(TripleString1) into"
+		<< " an empty string : " << endl;
 	if (pets.setString2(""))
 	{
 		cout << "TripleString mutator accepted the empty string." << endl;
 	}
 	else
 	{
-		cout << "TripleString mutator correctly rejected the empty string." << endl;
+		cout << "TripleString mutator correctly rejected the empty string." 
+			<< endl;
 	}
 	cout << endl;
 
 	// Mutator 2: string with 60 characters
-	cout << "Attempted to change string 1 of languages(TripleString4) into a 60-char string:" << endl;
-	const string LONG_STR = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+	cout << "Attempted to change string 1 of languages(TripleString4)"
+		<< endl << " into a 60-char string:" << endl;
+	const string LONG_STR 
+		= "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 	if (languages.setString1(LONG_STR))
 	{
 		cout << "TripleString mutator accepted the 60-char string." << endl;
 	}
 	else
 	{
-		cout << "TripleString mutator correctly rejected the 60-char string." << endl;
+		cout << "TripleString mutator correctly rejected the 60-char string." 
+			<< endl;
 	}
 	cout << endl;
 
 	// two accessor tests
 	cout << "----- Accessor tests -----" << endl;
-	cout << "sports (TripleString3) string 2 value is: " << sports.getString2() << endl;
+	cout << "sports (TripleString3) string 2 value is: " << sports.getString2() 
+		<< endl;
 	cout << "pets (TripleString1) string 3 value is: " << pets.getString3();
 
 	return 0;
 }
-// end client ---------------------------------------------------------------------
+// end client ----------------------------------------------------------
 
 // TripleString class methods
 
@@ -241,3 +247,37 @@ string TripleString::getString3()
 {
 	return string3;
 }
+
+/*------------------RUN 1-------------------------
+----- TripleStrings after instantiation -------
+ (undefined) ,  (undefined) ,  (undefined)
+
+ (undefined) ,  (undefined) ,  (undefined)
+
+ice skating, baseball, basketball
+
+French, Spanish, English
+
+
+----- TripleStrings after changes ------
+dogs, cats, fish
+
+oranges, apples, watermelon
+
+ice skating, golf, basketball
+
+Mandarin, Spanish, Japanese
+
+
+----- Mutator tests -----
+Attempted to change string2 of pets(TripleString1) into an empty string :
+TripleString mutator correctly rejected the empty string.
+
+Attempted to change string 1 of languages(TripleString4)
+ into a 60-char string:
+TripleString mutator correctly rejected the 60-char string.
+
+----- Accessor tests -----
+sports (TripleString3) string 2 value is: golf
+pets (TripleString1) string 3 value is: fish
+---------------END OF RUN 1-----------------------*/
