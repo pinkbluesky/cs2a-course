@@ -50,11 +50,80 @@ const int MIN_LEN = 1;
 const int MAX_LEN = 50;
 const string DEFAULT_STRING = " (undefined) ";
 
+// client -------------------------------------------------------------------------
 // main method that tests and runs the class
 int main()
 {
+	// initialize 4 TripleString objects
+	TripleString pets;
+	TripleString fruits;
+	TripleString sports("ice skating", "baseball", "basketball");
+	TripleString languages("French", "Spanish", "English");
+
+	// immediately display objects
+	cout << "----- TripleStrings after instantiation -------" << endl;
+	cout << pets.toString() << endl;
+	cout << fruits.toString() << endl;
+	cout << sports.toString() << endl;
+	cout << languages.toString() << endl << endl;
+
+	// mutate one or more members of every object
+	pets.setString1("dogs");
+	pets.setString2("cats");
+	pets.setString3("fish");
+	// mutate fruits object
+	fruits.setString1("oranges");
+	fruits.setString2("apples");
+	fruits.setString3("watermelon");
+	// mutate sports object
+	sports.setString2("golf");
+	// mutate languages object
+	languages.setString1("Mandarin");
+	languages.setString3("Japanese");
+
+	// display objects again
+	cout << "----- TripleStrings after changes ------" << endl;
+	cout << pets.toString() << endl;
+	cout << fruits.toString() << endl;
+	cout << sports.toString() << endl;
+	cout << languages.toString() << endl << endl;
+
+	// two explicit mutator tests
+	cout << "----- Mutator tests -----" << endl;
+
+	// Mutator 1: empty string
+	cout << "Attempted to change string2 of pets(TripleString1) into an empty string:" << endl;
+	if (pets.setString2(""))
+	{
+		cout << "TripleString mutator accepted the empty string." << endl;
+	}
+	else
+	{
+		cout << "TripleString mutator correctly rejected the empty string." << endl;
+	}
+	cout << endl;
+
+	// Mutator 2: string with 60 characters
+	cout << "Attempted to change string 1 of languages(TripleString4) into a 60-char string:" << endl;
+	const string LONG_STR = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+	if (languages.setString1(LONG_STR))
+	{
+		cout << "TripleString mutator accepted the 60-char string." << endl;
+	}
+	else
+	{
+		cout << "TripleString mutator correctly rejected the 60-char string." << endl;
+	}
+	cout << endl;
+
+	// two accessor tests
+	cout << "----- Accessor tests -----" << endl;
+	cout << "sports (TripleString3) string 2 value is: " << sports.getString2() << endl;
+	cout << "pets (TripleString1) string 3 value is: " << pets.getString3();
+
 	return 0;
 }
+// end client ---------------------------------------------------------------------
 
 // TripleString class methods
 
@@ -86,7 +155,6 @@ TripleString::TripleString(string str1, string str2, string str3)
 		// set to default value
 		string3 = DEFAULT_STRING;
 	}
-
 }
 
 // methods:
@@ -99,7 +167,6 @@ bool TripleString::validString(string str)
 	{
 		return true;
 	}
-
 	return false;
 }
 
@@ -143,7 +210,7 @@ bool TripleString::setString2(string str2)
 	}
 }
 
-bool TripleString::setString1(string str3)
+bool TripleString::setString3(string str3)
 {
 	// if input is valid
 	if (validString(str3))
