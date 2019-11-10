@@ -1,25 +1,43 @@
 #include <iostream>
 using namespace std;
 
-int fac(int num);
+class productType                                                 
+{                                                                 
+public:                                                           
+	productType(string, int, double, double);
+
+private:
+	string productName;
+	string id;
+	string manufacturer;
+	int quantitiesInStock;
+	double price; double discount;
+};
 
 int main()
 {
-	int num = 3;
-	cout << fac((-1) * num);
-	
-
 	return 0;
 }
 
-int fac(int num)
-{
-	int ans = 1;
-	if (num < 0) return -1;
-	while (num > 0)
-	{
-		ans = ans * num;
-		num--;
+productType::productType(string id, int quantitiesInStock, double price, double discount) {    
+	// initialize productName and manufacturer to an empty string    
+	productName = "";    
+	manufacturer = "";    
+	// initialize id to the first parameter    
+	this->id = id;        
+	// check that quantitiesInStock is nonnegative    
+	if (quantitiesInStock >= 0)    
+	{        
+		this->quantitiesInStock = quantitiesInStock;     
+	}    
+	// check that price is nonnegative    
+	if (price >= 0)    
+	{       
+		this->price = price ;    
+	}   
+	// check that discount is nonnegative  
+	if (discount >= 0)  
+	{    
+		this->discount = discount;   
 	}
-	return ans;
 }
