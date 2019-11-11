@@ -34,12 +34,13 @@ public:
 		int loanYears, int numberPayments);
 
 	// accessors
+	double getLoanAmount();
+	double getAnnualRate();
+	int getLoanYears();
 	// mutators
 	bool setLoanAmount(double loanAmountVal);
 	bool setAnnualRate(double annualRateVal);
-	bool setMonthlyRate(double monthlyRateVal);
 	bool setLoanYears(double loanYearsVal);
-	bool setNumberPayments(double numberPaymentsVal);
 
 	// toString
 	string toString();
@@ -89,12 +90,7 @@ Mortgage::Mortgage(double loanAmountVal, double annualRateVal,
 		annualRate = DEFAULT_VALUE;
 	}
 
-	// if value is not valid
-	if (!setMonthlyRate(monthlyRateVal))
-	{
-		// set to default value
-		monthlyRate = DEFAULT_VALUE;
-	}
+	// SET THE MONTHLY RATE
 
 	// if value is not valid
 	if (!setLoanYears(loanYearsVal))
@@ -103,15 +99,12 @@ Mortgage::Mortgage(double loanAmountVal, double annualRateVal,
 		loanYears = DEFAULT_VALUE;
 	}
 
-	// if value is not valids
-	if (!setNumberPayments(numberPaymentsVal))
-	{
-		// set to default value
-		numberPayments = DEFAULT_VALUE;
-	}
+	// SET NUMBER OF PAYMENTS
 }
 
 // mutators: set value if validValue returns true
+
+// sets the loan amount if it's a valid value
 bool Mortgage::setLoanAmount(double loanAmountVal)
 {
 	if (validValue(loanAmountVal))
@@ -122,6 +115,7 @@ bool Mortgage::setLoanAmount(double loanAmountVal)
 	return false;
 }
 
+// sets the annual rate if it's a valid value
 bool Mortgage::setAnnualRate(double annualRateVal)
 {
 	if (validValue(annualRateVal))
@@ -132,16 +126,7 @@ bool Mortgage::setAnnualRate(double annualRateVal)
 	return false;
 }
 
-bool Mortgage::setMonthlyRate(double monthlyRateVal)
-{
-	if (validValue(monthlyRateVal))
-	{
-		monthlyRate = monthlyRateVal;
-		return true;
-	}
-	return false;
-}
-
+// sets the loan years if it's a valid value
 bool Mortgage::setLoanYears(double loanYearsVal)
 {
 	if (validValue(loanYearsVal))
@@ -152,29 +137,39 @@ bool Mortgage::setLoanYears(double loanYearsVal)
 	return false;
 }
 
-bool Mortgage::setNumberPayments(double numberPaymentsVal)
+// accessors: returns the requested value
+
+// returns loan amount
+double Mortgage::getLoanAmount()
 {
-	if (validValue(numberPaymentsVal))
-	{
-		numberPayments = numberPaymentsVal;
-		return true;
-	}
-	return false;
+	return loanAmount;
 }
 
-// accessors:
+// returns annual rate
+double Mortgage::getAnnualRate()
+{
+	return annualRate;
+}
+
+// returns the number of loan years
+int Mortgage::getLoanYears()
+{
+	return loanYears;
+}
 
 // toString method
 // returns a string containing all the Mortgage information
-string toString()
+string Mortgage::toString()
 {
-
+	string out = "Amount of the loan: " + to_string(loanAmount) + "\n";
+	out += "Annual interest rate: " + to_string(annualRate) + "\n";
+	out += "Length of the loan in years: " + to_string(loanYears) + "\n";
 }
 
 // private helper method validValue()
 // returns true if number is greater than default value
 // returns false if not
-bool validValue(double number)
+bool Mortgage::validValue(double number)
 {
 	// if number is valid: greater than default value
 	if (number > Mortgage::DEFAULT_VALUE)
