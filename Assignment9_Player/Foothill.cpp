@@ -72,21 +72,114 @@ int main()
 // adds a new players and their score as long as the number of players in the 
 // array is not greater than MAX_PLAYERS
 // edits players[] array and numPlayers
+// prints a confirmation message if successful, or error message if not
 void addPlayer(int &numPlayers, Player players[])
 {
+	// if the length of the array would exceed the max_players
+	if (numPlayers + 1 > Player::MAX_PLAYERS)
+	{
+		// print error message
+		cout << "Error: cannot add new player because the number of "
+			<< "players would exceed " << Player::MAX_PLAYERS << endl;
+	}
+	// if we can add the new player
+	else
+	{
+		// ask user for the new player
+		string firstName;
+		string lastName;
+		int score;
+	
+		cout << "Enter the new player's first name: ";
+		cin >> firstName;
+		cout << endl;
 
+		cout << "Enter the new player's last name: ";
+		cin >> lastName;
+		cout << endl;
+
+		cout << "Enter the new player's score: ";
+		cin >> score;
+		cout << endl;
+
+		Player newPlayer(firstName, lastName, score);
+
+		// update the empty position at players[numPlayers]
+		players[numPlayers] = newPlayer;
+		// update numPlayers
+		numPlayers++;
+
+		// print confirmation message
+		cout << newPlayer.toString() << " has been added." << endl;
+	}
 }
 
 // prints the players and their scores in the array
 // does not edit any parameters
+// prints a list of players or a message stating that there are no players 
 void printPlayers(int numPlayers, Player players[])
 {
-
+	// print intro msg
+	cout << "List of players and their scores: " << endl;
+	for (int i = 0; i < numPlayers; i++)
+	{
+		// prints the player name and score
+		cout << players[i].toString() << endl;
+	}
 }
 
+// asks for a last name to search for
+// prints the player's name and score or a message if the player wasn't found
 void searchPlayers(int numPlayers, Player players[])
 {
+	// ask for user input
+	string searchLastName;
+	cout << "Which player do you want to search for by last name?" << endl;
+	cin >> searchLastName;
 
+	for (int i = 0; i < numPlayers; i++)
+	{
+		// if the name matches
+		if (players[i].getLastName() == searchLastName)
+		{
+			// print player info
+			cout << "Player found: " << players[i].toString() << endl;
+			// exit
+			return;
+		}
+	}
+
+	// if no player matched
+	cout << "No player found with last name " << searchLastName << "." << endl;
+}
+
+// asks for a last name of a Player to remove from the array
+// edits players[] array and numPlayers
+// prints a confirmation message if deletion was successful or message
+void removePlayer(int& numPlayers, Player players[])
+{
+	// ask for user input
+	string lastName;
+	cout << "Which player do you want to remove by last name?" << endl;
+	cin >> lastName;
+
+	for (int i = 0; i < numPlayers; i++)
+	{
+		// if the name matches
+		if (players[i].getLastName() == lastName)
+		{
+			// print a confirmation message
+			cout << "Player " << players[i].toString() << " has been removed." 
+				<< endl;
+			// update numPlayers
+			numPlayers--;
+			// exit
+			return;
+		}
+	}
+
+	// if no player was found
+	cout << "No player found with last name " << lastName << "." << endl;
 }
 
 // Player methods
