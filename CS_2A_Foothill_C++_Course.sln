@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment8_Mortgage", "Ass
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabExercise4_29", "LabExercise4_29\LabExercise4_29.vcxproj", "{626747EC-C0F5-4A53-A116-37CB321A1A6C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment9_Player", "Assignment9_Player\Assignment9_Player.vcxproj", "{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +183,16 @@ Global
 		{626747EC-C0F5-4A53-A116-37CB321A1A6C}.Release|x64.Build.0 = Release|x64
 		{626747EC-C0F5-4A53-A116-37CB321A1A6C}.Release|x86.ActiveCfg = Release|Win32
 		{626747EC-C0F5-4A53-A116-37CB321A1A6C}.Release|x86.Build.0 = Release|Win32
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Debug|x64.ActiveCfg = Debug|x64
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Debug|x64.Build.0 = Debug|x64
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Debug|x86.ActiveCfg = Debug|Win32
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Debug|x86.Build.0 = Debug|Win32
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Release|Any CPU.ActiveCfg = Release|Win32
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Release|x64.ActiveCfg = Release|x64
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Release|x64.Build.0 = Release|x64
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Release|x86.ActiveCfg = Release|Win32
+		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

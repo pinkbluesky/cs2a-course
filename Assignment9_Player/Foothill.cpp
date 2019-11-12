@@ -61,9 +61,68 @@ const int Player::MAX_PLAYERS = 10;
 const int Player::MAX_LEN = 30;
 const int Player::MIN_LEN = 2;
 
+// client function prototypes
+// adds a player
+void addPlayer(int& numPlayers, Player players[]);
+// prints all players
+void printPlayers(int numPlayers, Player players[]);
+// searches for a player
+void searchPlayers(int numPlayers, Player players[]);
+// removes a player
+void removePlayer(int& numPlayers, Player players[]);
+
 // client ----------------------------------------------------------------------
 int main()
 {
+	// constants for the 5 possible user inputs
+	static const char ADD_CHOICE = 'a';
+	static const char PRINT_CHOICE = 'b';
+	static const char SEARCH_CHOICE = 'c';
+	static const char REMOVE_CHOICE = 'd';
+	static const char QUIT_CHOICE = 'e';
+
+	// variables
+	int numPlayers = 0;
+	// players length is the max length
+	Player players[Player::MAX_PLAYERS];
+
+	char choice;
+	do
+	{
+		// print menu
+		cout << "Enter an option:" << endl;
+		cout << ADD_CHOICE << ". Add new player and score." << endl;
+		cout << PRINT_CHOICE << ". Print all players and scores." << endl;
+		cout << SEARCH_CHOICE << ". Search for a player's score." << endl;
+		cout << REMOVE_CHOICE << ". Remove a player." << endl;
+		cout << QUIT_CHOICE << ". Quit." << endl;
+
+		cin >> choice;
+		cout << endl;
+
+		// add a new player
+		if (choice == ADD_CHOICE)
+		{
+			addPlayer(numPlayers, players);
+		}
+		// print the players
+		else if (choice == PRINT_CHOICE)
+		{
+			printPlayers(numPlayers, players);
+		}
+		// search for a player
+		else if (choice == SEARCH_CHOICE)
+		{
+			searchPlayers(numPlayers, players);
+		}
+		// remove a player
+		else if (choice == REMOVE_CHOICE)
+		{
+			removePlayer(numPlayers, players);
+		}
+
+		cout << endl;
+	} while (choice != QUIT_CHOICE);
 	return 0;
 }
 
@@ -269,7 +328,7 @@ bool Player::setScore(int score)
 // returns a string containing all the Player info
 string Player::toString()
 {
-	return firstName + " " + lastName + " " + to_string(score) + "\n";
+	return firstName + " " + lastName + " " + to_string(score);
 }
 
 // private static helper methods
