@@ -230,6 +230,14 @@ void removePlayer(int& numPlayers, Player players[])
 			// print a confirmation message
 			cout << "Player " << players[i].toString() << " has been removed." 
 				<< endl;
+
+			// overwrite values starting at p[i]
+			for (int k = i; k < numPlayers - 1; k++)
+			{
+				// overwrite
+				players[k] = players[k + 1];
+			}
+
 			// update numPlayers
 			numPlayers--;
 			// exit
@@ -358,3 +366,456 @@ bool Player::validScore(int score)
 
 	return false;
 }
+
+/*------------------------RUN 1----------------------------------------------
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Alex
+
+Enter the new player's last name: Abraham
+
+Enter the new player's score: 10
+
+Alex Abraham 10 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Betty
+
+Enter the new player's last name: Burg
+
+Enter the new player's score: 5
+
+Betty Burg 5 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+b
+
+List of players and their scores:
+Alex Abraham 10
+Betty Burg 5
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Cary
+
+Enter the new player's last name: Chen
+
+Enter the new player's score: 20
+
+Cary Chen 20 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+c
+
+Which player do you want to search for by last name?
+Burg
+Player found: Betty Burg 5
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+c
+
+Which player do you want to search for by last name?
+zzzzz
+No player found with last name zzzzz.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+d
+
+Which player do you want to remove by last name?
+Chen
+Player Cary Chen 20 has been removed.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+b
+
+List of players and their scores:
+Alex Abraham 10
+Betty Burg 5
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Danny
+
+Enter the new player's last name: Diaz
+
+Enter the new player's score: 40
+
+Danny Diaz 40 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+b
+
+List of players and their scores:
+Alex Abraham 10
+Betty Burg 5
+Danny Diaz 40
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+e
+
+
+
+--------------------------------END OF RUN 1-------------------------------*/
+
+/*----------------------------------RUN 2----------------------------------
+Enter the new player's first name: Axel
+
+Enter the new player's last name: Adams
+
+Enter the new player's score: 10
+
+Axel Adams 10 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Betty
+
+Enter the new player's last name: Burgs
+
+Enter the new player's score: 20
+
+Betty Burgs 20 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Cary
+
+Enter the new player's last name: Chen
+
+Enter the new player's score: 44
+
+Cary Chen 44 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Deanna
+
+Enter the new player's last name: Drake
+
+Enter the new player's score: 40
+
+Deanna Drake 40 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Eddie
+
+Enter the new player's last name: Edholm
+
+Enter the new player's score: 10
+
+Eddie Edholm 10 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Fanny
+
+Enter the new player's last name: Far
+
+Enter the new player's score: 50
+
+Fanny Far 50 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Gerrie
+
+Enter the new player's last name: Gertie
+
+Enter the new player's score: 11
+
+Gerrie Gertie 11 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Henrietta
+
+Enter the new player's last name: Holmes
+
+Enter the new player's score: 55
+
+Henrietta Holmes 55 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Ian
+
+Enter the new player's last name: Illan
+
+Enter the new player's score: 100
+
+Ian Illan 100 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Jack
+
+Enter the new player's last name: Jones
+
+Enter the new player's score: 78
+
+Jack Jones 78 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Error: cannot add new player because the number of players would exceed 10
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+b
+
+List of players and their scores:
+Axel Adams 10
+Betty Burgs 20
+Cary Chen 44
+Deanna Drake 40
+Eddie Edholm 10
+Fanny Far 50
+Gerrie Gertie 11
+Henrietta Holmes 55
+Ian Illan 100
+Jack Jones 78
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+d
+
+Which player do you want to remove by last name?
+Burgs
+Player Betty Burgs 20 has been removed.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+b
+
+List of players and their scores:
+Axel Adams 10
+Cary Chen 44
+Deanna Drake 40
+Eddie Edholm 10
+Fanny Far 50
+Gerrie Gertie 11
+Henrietta Holmes 55
+Ian Illan 100
+Jack Jones 78
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+d
+
+Which player do you want to remove by last name?
+Illan
+Player Ian Illan 100 has been removed.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+b
+
+List of players and their scores:
+Axel Adams 10
+Cary Chen 44
+Deanna Drake 40
+Eddie Edholm 10
+Fanny Far 50
+Gerrie Gertie 11
+Henrietta Holmes 55
+Jack Jones 78
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+c
+
+Which player do you want to search for by last name?
+Chen
+Player found: Cary Chen 44
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+a
+
+Enter the new player's first name: Zennie
+
+Enter the new player's last name: Zhao
+
+Enter the new player's score: 11
+
+Zennie Zhao 11 has been added.
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+b
+
+List of players and their scores:
+Axel Adams 10
+Cary Chen 44
+Deanna Drake 40
+Eddie Edholm 10
+Fanny Far 50
+Gerrie Gertie 11
+Henrietta Holmes 55
+Jack Jones 78
+Zennie Zhao 11
+
+Enter an option:
+a. Add new player and score.
+b. Print all players and scores.
+c. Search for a player's score.
+d. Remove a player.
+e. Quit.
+e
+
+
+
+---------------------------------END OF RUN 2------------------------------*/
