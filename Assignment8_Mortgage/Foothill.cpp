@@ -11,6 +11,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <iomanip>
+#include <cmath>
 using namespace std;
 
 class Mortgage
@@ -30,8 +32,7 @@ public:
 
 	// constructors
 	Mortgage();
-	Mortgage(double loanAmount, double annualRate, double monthlyRate,
-		int loanYears, int numberPayments);
+	Mortgage(double loanAmount, double annualRate, int loanYears);
 
 	// accessors
 	double getLoanAmount();
@@ -45,6 +46,12 @@ public:
 	// toString
 	string toString();
 
+	// calculation methods
+	double getMonthlyPayment();
+	double getTotalPayback();
+	// toString for calculations
+	string calToString();
+
 private:
 	// static helper method
 	static bool validValue(double number);
@@ -57,8 +64,79 @@ const int Mortgage::DEFAULT_VALUE = 0;
 // client ----------------------------------------------------------------------
 int main()
 {
+	// initialize 4 mortgages
 	Mortgage mortgage1, mortgage2;
+	Mortgage mortgage3 (3000, 0.035, 3);
+	Mortgage mortgage4(45000, 0.025, 5);
+	
+	// immediately print 4 mortgages
+	cout << "Mortgages before mutations: --------------------" << endl << endl;
+	cout << "Mortgage 1: " << endl << mortgage1.toString() << endl << endl;
+	cout << "Mortgage 2: " << endl << mortgage2.toString() << endl << endl;
+	cout << "Mortgage 3: " << endl << mortgage3.toString() << endl;
+	cout << mortgage3.calToString() << endl;
+	cout << "Mortgage 4: " << endl << mortgage4.toString() << endl;
+	cout << mortgage4.calToString() << endl;
 
+	// mutate one or more members of every object
+	mortgage1.setLoanAmount(4000);
+	mortgage1.setAnnualRate(0.054);
+	mortgage1.setLoanYears(2);
+
+	mortgage2.setLoanAmount(1050);
+	mortgage2.setAnnualRate(0.012);
+	mortgage2.setLoanYears(10);
+
+	mortgage3.setLoanAmount(1000);
+
+	mortgage4.setAnnualRate(0.011);
+	mortgage4.setLoanYears(8);
+
+	// display 4 mortgages
+	cout << "Mortgages after mutations: --------------------" << endl << endl;
+	cout << "Mortgage 1: " << endl << mortgage1.toString() << endl;
+	cout << mortgage1.calToString() << endl;
+	cout << "Mortgage 2: " << endl << mortgage2.toString() << endl;
+	cout << mortgage2.calToString() << endl;
+	cout << "Mortgage 3: " << endl << mortgage3.toString() << endl;
+	cout << mortgage3.calToString() << endl;
+	cout << "Mortgage 4: " << endl << mortgage4.toString() << endl;
+	cout << mortgage4.calToString() << endl;
+
+	// 2 explicit mutator calls
+	cout << "2 mutator calls: -----------------------------" << endl << endl;
+	const double INVALID_ANNUAL = -0.111;
+	cout << "Attempted to change Mortgage 1's annual rate to " 
+		<< INVALID_ANNUAL << endl;
+	if (mortgage1.setAnnualRate(INVALID_ANNUAL))
+	{
+		cout << "Change was incorrectly successful";
+	}
+	else
+	{
+		cout << "Change was correctly not successful";
+	}
+	cout << endl << mortgage1.toString();
+	cout << endl;
+
+	const double INVALID_LOAN_Y = -100;
+	cout << "Attempted to change Mortgage 2's loan years to " 
+		<< INVALID_LOAN_Y << endl;
+	if (mortgage2.setLoanYears(INVALID_LOAN_Y))
+	{
+		cout << "Change was incorrectly successful";
+	}
+	else
+	{
+		cout << "Change was correctly not successful";
+	}
+	cout << endl << mortgage2.toString();
+	cout << endl << endl;
+
+	// 2 accessor calls
+	cout << "2 accessor calls: -------------------------" << endl << endl;
+	cout << "Mortgage 3's loan years: " << mortgage3.getLoanYears() << endl;
+	cout << "Mortgage 4's annual rate: " << mortgage4.getAnnualRate() << endl;
 	return 0;
 }
 
@@ -74,7 +152,7 @@ numberPayments(DEFAULT_VALUE)
 // initializes member variables if value is valid
 // if not valid, initializes to DEFAULT_VALUE
 Mortgage::Mortgage(double loanAmountVal, double annualRateVal, 
-	double monthlyRateVal, int loanYearsVal, int numberPaymentsVal) 
+	int loanYearsVal) 
 {
 	// if value is not valid
 	if (!setLoanAmount(loanAmountVal))
@@ -84,22 +162,20 @@ Mortgage::Mortgage(double loanAmountVal, double annualRateVal,
 	}
 
 	// if value is not valid
+	// annual rate also sets monthly rate
 	if (!setAnnualRate(annualRateVal))
 	{
 		// set to default value
 		annualRate = DEFAULT_VALUE;
 	}
 
-	// SET THE MONTHLY RATE
-
 	// if value is not valid
+	// loan years also sets numberPayments
 	if (!setLoanYears(loanYearsVal))
 	{
 		// set to default value
 		loanYears = DEFAULT_VALUE;
 	}
-
-	// SET NUMBER OF PAYMENTS
 }
 
 // mutators: set value if validValue returns true
@@ -121,6 +197,7 @@ bool Mortgage::setAnnualRate(double annualRateVal)
 	if (validValue(annualRateVal))
 	{
 		annualRate = annualRateVal;
+		monthlyRate = annualRate / 12;
 		return true;
 	}
 	return false;
@@ -132,6 +209,7 @@ bool Mortgage::setLoanYears(double loanYearsVal)
 	if (validValue(loanYearsVal))
 	{
 		loanYears = loanYearsVal;
+		numberPayments = loanYears * NUM_OF_MONTHS;
 		return true;
 	}
 	return false;
@@ -161,9 +239,44 @@ int Mortgage::getLoanYears()
 // returns a string containing all the Mortgage information
 string Mortgage::toString()
 {
-	string out = "Amount of the loan: " + to_string(loanAmount) + "\n";
-	out += "Annual interest rate: " + to_string(annualRate) + "\n";
-	out += "Length of the loan in years: " + to_string(loanYears) + "\n";
+	ostringstream streamLoanA, streamRate, streamLoanY;
+	streamLoanA << fixed << setprecision(2) << loanAmount;
+	string out = "Amount of the loan: " + streamLoanA.str() + "\n";
+
+	streamRate << fixed << setprecision(3) << annualRate;
+	out += "Annual interest rate: " + streamRate.str() + "\n";
+
+	streamLoanY << loanYears;
+	out += "Length of the loan in years: " + streamLoanY.str() + "\n";
+
+	return out;
+}
+
+// get and calculate monthly payment
+double Mortgage::getMonthlyPayment()
+{
+	double term = pow(1 + annualRate / 12, 12 * loanYears);
+	return (loanAmount * annualRate * term / 12) / (term - 1);
+}
+
+// calculate total payback using monthyPayment * numPayments
+double Mortgage::getTotalPayback()
+{
+	return getMonthlyPayment() * numberPayments;
+}
+
+// returns a string containing the values of the two calculations
+string Mortgage::calToString()
+{
+	ostringstream streamMonthly, streamTotal;
+
+	streamMonthly << fixed << setprecision(2) << getMonthlyPayment();
+	string out = "Monthly payment: " + streamMonthly.str() + "\n";
+
+	streamTotal << fixed << setprecision(2) << getTotalPayback();
+	out += "Total payback: " + streamTotal.str() + "\n";
+
+	return out;
 }
 
 // private helper method validValue()
