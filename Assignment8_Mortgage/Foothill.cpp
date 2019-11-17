@@ -116,8 +116,7 @@ int main()
 	{
 		cout << "Change was correctly not successful";
 	}
-	cout << endl << mortgage1.toString();
-	cout << endl;
+	cout << endl << mortgage1.toString() << endl;
 
 	const double INVALID_LOAN_Y = -100;
 	cout << "Attempted to change Mortgage 2's loan years to " 
@@ -130,8 +129,7 @@ int main()
 	{
 		cout << "Change was correctly not successful";
 	}
-	cout << endl << mortgage2.toString();
-	cout << endl << endl;
+	cout << endl << mortgage2.toString() << endl;
 
 	// 2 accessor calls
 	cout << "2 accessor calls: -------------------------" << endl << endl;
@@ -293,3 +291,89 @@ bool Mortgage::validValue(double number)
 	// otherwise return false
 	return false;
 }
+
+/*-------------------RUN 1----------------------------------
+Mortgages before mutations: --------------------
+
+Mortgage 1:
+Amount of the loan: 0.00
+Annual interest rate: 0.000
+Length of the loan in years: 0
+
+
+Mortgage 2:
+Amount of the loan: 0.00
+Annual interest rate: 0.000
+Length of the loan in years: 0
+
+
+Mortgage 3:
+Amount of the loan: 3000.00
+Annual interest rate: 0.035
+Length of the loan in years: 3
+
+Monthly payment: 87.91
+Total payback: 3164.62
+
+Mortgage 4:
+Amount of the loan: 45000.00
+Annual interest rate: 0.025
+Length of the loan in years: 5
+
+Monthly payment: 798.63
+Total payback: 47917.88
+
+Mortgages after mutations: --------------------
+
+Mortgage 1:
+Amount of the loan: 4000.00
+Annual interest rate: 0.054
+Length of the loan in years: 2
+
+Monthly payment: 176.20
+Total payback: 4228.87
+
+Mortgage 2:
+Amount of the loan: 1050.00
+Annual interest rate: 0.012
+Length of the loan in years: 10
+
+Monthly payment: 9.29
+Total payback: 1114.78
+
+Mortgage 3:
+Amount of the loan: 1000.00
+Annual interest rate: 0.035
+Length of the loan in years: 3
+
+Monthly payment: 29.30
+Total payback: 1054.87
+
+Mortgage 4:
+Amount of the loan: 45000.00
+Annual interest rate: 0.011
+Length of the loan in years: 8
+
+Monthly payment: 489.89
+Total payback: 47029.64
+
+2 mutator calls: -----------------------------
+
+Attempted to change Mortgage 1's annual rate to -0.111
+Change was correctly not successful
+Amount of the loan: 4000.00
+Annual interest rate: 0.054
+Length of the loan in years: 2
+
+Attempted to change Mortgage 2's loan years to -100
+Change was correctly not successful
+Amount of the loan: 1050.00
+Annual interest rate: 0.012
+Length of the loan in years: 10
+
+2 accessor calls: -------------------------
+
+Mortgage 3's loan years: 3
+Mortgage 4's annual rate: 0.011
+
+------------------END OF RUN 1----------------------------*/
