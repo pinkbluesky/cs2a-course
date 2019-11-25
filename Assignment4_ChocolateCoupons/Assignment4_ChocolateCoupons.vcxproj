@@ -23,6 +23,7 @@
     <ProjectGuid>{19A2E7E1-9D35-480A-ADC5-195B95FC0A61}</ProjectGuid>
     <RootNamespace>Assignment4ChocolateCoupons</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Assignment04_ChocolateCoupons</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

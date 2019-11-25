@@ -23,6 +23,7 @@
     <ProjectGuid>{6D164636-3CDE-4C54-B8E7-98E9685D2191}</ProjectGuid>
     <RootNamespace>Assignment8Mortgage</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Assignment08_Mortgage</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

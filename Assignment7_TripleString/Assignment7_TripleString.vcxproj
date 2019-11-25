@@ -23,6 +23,7 @@
     <ProjectGuid>{02D7CA95-DA60-4EC6-BD17-10EA4A9E1FFE}</ProjectGuid>
     <RootNamespace>Assignment7TripleString</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Assignment07_TripleString</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

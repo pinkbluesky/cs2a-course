@@ -23,6 +23,7 @@
     <ProjectGuid>{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}</ProjectGuid>
     <RootNamespace>Assignment9Player</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Assignment09_Player</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

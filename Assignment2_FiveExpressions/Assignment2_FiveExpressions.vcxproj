@@ -23,6 +23,7 @@
     <ProjectGuid>{162DD847-CBDC-4E1C-BC1C-236FAF1E7E69}</ProjectGuid>
     <RootNamespace>Assignment2FiveExpressions</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>Assignment02_FiveExpressions</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

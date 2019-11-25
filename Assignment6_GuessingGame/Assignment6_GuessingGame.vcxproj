@@ -23,6 +23,7 @@
     <ProjectGuid>{E68C18FA-99CE-4C47-8041-552DB7564B94}</ProjectGuid>
     <RootNamespace>Assignment6GuessingGame</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Assignment06_GuessingGame</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

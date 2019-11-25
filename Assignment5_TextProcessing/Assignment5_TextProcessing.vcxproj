@@ -23,6 +23,7 @@
     <ProjectGuid>{25ACFBC5-4873-45A7-B797-2F4C4E15D14A}</ProjectGuid>
     <RootNamespace>Assignment5TextProcessing</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Assignment05_TextProcessing</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

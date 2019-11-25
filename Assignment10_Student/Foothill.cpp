@@ -64,23 +64,93 @@ private:
 const string Student::DEFAULT_NAME = "zz-error";
 int Student::sortKey = Student::SORT_BY_LAST;
 
+// constant initialization for main method
+static const int ARR1_LEN = 15;
+static const int ARR2_LEN = 16;
+static const int ARR3_LEN = 1;
+static const int ARR4_LEN = 0;
+
 int main()
 {
-   Student  myClass[] = 
-   {  
-      Student("smith","fred", 95),  
-      Student("bauer","jack",123),
-      Student("jacobs","carrie", 195),  Student("renquist","abe",148),
-      Student("3ackson","trevor", 108),  Student("perry","fred",225),
-      Student("loceff","fred", 44),  Student("stollings","pamela",452),
-      Student("charters","rodney", 295),  Student("cassar","john",321)
-   };
+	Student arr1[ARR1_LEN]
+	{
+		Student("Hunt", "Hugh", 90), Student("Stevens", "Lloyd", 100),
+		Student("Payne", "Matilda", 177),  Student("Hunter", "Madison", 120),
+		Student("Chavez", "Georgina", 88),  Student("Cunnings","Annabelle", 150),
+		Student("Simmons", "Ellie", 78),  Student("O'Gallagher", "Maya", 340),
+		Student("Alvarez", "Casey", 133),  Student("Richards", "Darcy", 71),
+		Student("Reyes", "Kayla", 200), Student("Berry", "Kathie", 341),
+		Student("Simpson", "Bart", 55), Student("Webb", "Dennis", 241),
+		Student("Hawkins", "Zelda", 190)
+	};
+	
+	Student arr2[ARR2_LEN]
+	{
+		Student("Hunt", "Hugh", 90), Student("Stevens", "Lloyd", 100),
+		Student("Payne", "Matilda", 177),  Student("Hunter", "Madison", 120),
+		Student("Chavez", "Georgina", 88),  Student("Cunnings","Annabelle", 150),
+		Student("Simmons", "Ellie", 78),  Student("O'Gallagher", "Maya", 340),
+		Student("Alvarez", "Casey", 133),  Student("Richards", "Darcy", 71),
+		Student("Reyes", "Kayla", 200), Student("Berry", "Kathie", 341),
+		Student("Simpson", "Bart", 55), Student("Webb", "Dennis", 241),
+		Student("Hawkins", "Zelda", 190), Student("Rozenburg", "Cary", 83)
+	};
+	Student arr3[ARR3_LEN]
+	{
+		Student("Hunt", "Hugh", 90)
+	};
 
-   int arraySize = sizeof(myClass) / sizeof(myClass[0]);
+	// print the array
+	cout << StudentArrayUtilities::toString("-------- Array 2, size " 
+		+ to_string(ARR2_LEN) + ", before modification ---------", arr2, ARR2_LEN);
+	cout << endl;
 
-   StudentArrayUtilities::printArray("Before: ", myClass, arraySize);
-   StudentArrayUtilities::arraySort(myClass, arraySize);
-   StudentArrayUtilities::printArray("After: ", myClass, arraySize);
+	// sort and print array by default sortkey
+	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
+	cout << StudentArrayUtilities::toString("-------- Array 2, size "
+		+ to_string(ARR2_LEN) + ", sorted by default ---------", arr2, ARR2_LEN);
+	cout << endl;
+
+	// sort and print array by first name
+	Student::setSortKey(Student::SORT_BY_FIRST);
+
+	cout << Student::getSortKey() << endl; // ---------------------------------
+
+	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
+	cout << StudentArrayUtilities::toString("-------- Array 2, size "
+		+ to_string(ARR2_LEN) + ", sorted by first name ---------", arr2, ARR2_LEN);
+
+	cout << Student::getSortKey() << endl; // ---------------------------------
+
+	cout << endl;
+
+	// sort and print array by points
+	Student::setSortKey(Student::SORT_BY_POINTS);
+
+	cout << Student::getSortKey() << endl; // ---------------------------------
+
+	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
+	cout << StudentArrayUtilities::toString("-------- Array 2, size "
+		+ to_string(ARR2_LEN) + ", sorted by points ---------", arr2, ARR2_LEN);
+
+	cout << Student::getSortKey() << endl; // ---------------------------------
+
+	cout << endl;
+
+	// set sortkey to first name, call and display median
+	Student::setSortKey(Student::SORT_BY_FIRST);
+	cout << "Median: " << StudentArrayUtilities::getMedianDestructive(arr2, ARR2_LEN) << endl;
+
+	// print sortkey value
+	cout << "Sort key value: " << Student::getSortKey() << endl << endl;
+
+	// print the medians of the other three arrays
+	cout << "Median of Array 1: " 
+		<< StudentArrayUtilities::getMedianDestructive(arr1, ARR1_LEN) << endl;
+	cout << "Median of Array 3: " 
+		<< StudentArrayUtilities::getMedianDestructive(arr3, ARR3_LEN) << endl;
+
+	return 0;
 }
 
 // beginning of Student method definitions -------------
@@ -129,10 +199,13 @@ int Student::compareTwoStudents( Student firstStud, Student secondStud )
    {
    case SORT_BY_FIRST:
 	   result = firstStud.firstName.compare(secondStud.firstName);
+	   break;
    case SORT_BY_LAST:
 	   result = firstStud.lastName.compare(secondStud.lastName);
+	   break;
    case SORT_BY_POINTS:
 	   result = firstStud.totalPoints - secondStud.totalPoints;
+	   break;
    }
 
    return result;
@@ -224,9 +297,9 @@ double StudentArrayUtilities::getMedianDestructive(Student array[], int arraySiz
 	}
 
 	// check for 1 element array case
-	if (arraySize = 1)
+	if (arraySize == 1)
 	{
-		return array[0].getTotalPoints;
+		return array[0].getTotalPoints();
 	}
 
 	// sort the array
@@ -236,13 +309,13 @@ double StudentArrayUtilities::getMedianDestructive(Student array[], int arraySiz
 	// reset the sort key
 	Student::setSortKey(tempSortKey);
 
-	double median;
+	double median = 0;
 	// for even numbered arrays:
 	if (arraySize % 2 == 0)
 	{
 		int index1 = (arraySize - 1) / 2;
-		int index2 = arraySize / 2;
-		median = (array[index1].getTotalPoints() + array[index2].getTotalPoints()) / 2;
+		int index2 = arraySize / 2; 
+		median = ((double) array[index1].getTotalPoints() + array[index2].getTotalPoints()) / 2.0;
 	}
 
 	// for odd numbered arrays

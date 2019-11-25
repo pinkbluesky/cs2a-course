@@ -5,33 +5,35 @@ VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CS_2A_Foothill_C++_Course", "CS_2A_Foothill_C++_Course\CS_2A_Foothill_C++_Course.vcxproj", "{05C47295-9D84-45B7-A3CF-CD864BE87A54}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment1_HelloWorld", "Assignment1_HelloWorld\Assignment1_HelloWorld.vcxproj", "{50398008-5645-4FD6-B704-147FD1E3AEFC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment01_HelloWorld", "Assignment1_HelloWorld\Assignment1_HelloWorld.vcxproj", "{50398008-5645-4FD6-B704-147FD1E3AEFC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment2_FiveExpressions", "Assignment2_FiveExpressions\Assignment2_FiveExpressions.vcxproj", "{162DD847-CBDC-4E1C-BC1C-236FAF1E7E69}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment02_FiveExpressions", "Assignment2_FiveExpressions\Assignment2_FiveExpressions.vcxproj", "{162DD847-CBDC-4E1C-BC1C-236FAF1E7E69}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{D9CDBDA9-3C79-4A80-99E5-31F0D371882A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabExercise1_40", "LabExercise1_40\LabExercise1_40.vcxproj", "{65BBB44E-EE19-4302-8C6C-4113C77EBE42}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabExercise01_40", "LabExercise1_40\LabExercise1_40.vcxproj", "{65BBB44E-EE19-4302-8C6C-4113C77EBE42}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment3_CandyCalculator", "Assignment3_CandyCalculator\Assignment3_CandyCalculator.vcxproj", "{8E9FBD80-E669-40E7-BCF6-43E6BDDBA99D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment03_CandyCalculator", "Assignment3_CandyCalculator\Assignment3_CandyCalculator.vcxproj", "{8E9FBD80-E669-40E7-BCF6-43E6BDDBA99D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment4_ChocolateCoupons", "Assignment4_ChocolateCoupons\Assignment4_ChocolateCoupons.vcxproj", "{19A2E7E1-9D35-480A-ADC5-195B95FC0A61}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment04_ChocolateCoupons", "Assignment4_ChocolateCoupons\Assignment4_ChocolateCoupons.vcxproj", "{19A2E7E1-9D35-480A-ADC5-195B95FC0A61}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment5_TextProcessing", "Assignment5_TextProcessing\Assignment5_TextProcessing.vcxproj", "{25ACFBC5-4873-45A7-B797-2F4C4E15D14A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment05_TextProcessing", "Assignment5_TextProcessing\Assignment5_TextProcessing.vcxproj", "{25ACFBC5-4873-45A7-B797-2F4C4E15D14A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabExercise3_33", "LabExercise3_33\LabExercise3_33.vcxproj", "{DD15037C-5C12-4C5B-98BF-3253B35231D5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabExercise03_33", "LabExercise3_33\LabExercise3_33.vcxproj", "{DD15037C-5C12-4C5B-98BF-3253B35231D5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment6_GuessingGame", "Assignment6_GuessingGame\Assignment6_GuessingGame.vcxproj", "{E68C18FA-99CE-4C47-8041-552DB7564B94}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment06_GuessingGame", "Assignment6_GuessingGame\Assignment6_GuessingGame.vcxproj", "{E68C18FA-99CE-4C47-8041-552DB7564B94}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Midterm_30", "Midterm_30\Midterm_30.vcxproj", "{29E120B3-DCA8-4D80-9736-5634C1F72F88}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment7_TripleString", "Assignment7_TripleString\Assignment7_TripleString.vcxproj", "{02D7CA95-DA60-4EC6-BD17-10EA4A9E1FFE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment07_TripleString", "Assignment7_TripleString\Assignment7_TripleString.vcxproj", "{02D7CA95-DA60-4EC6-BD17-10EA4A9E1FFE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment8_Mortgage", "Assignment8_Mortgage\Assignment8_Mortgage.vcxproj", "{6D164636-3CDE-4C54-B8E7-98E9685D2191}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment08_Mortgage", "Assignment8_Mortgage\Assignment8_Mortgage.vcxproj", "{6D164636-3CDE-4C54-B8E7-98E9685D2191}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabExercise4_29", "LabExercise4_29\LabExercise4_29.vcxproj", "{626747EC-C0F5-4A53-A116-37CB321A1A6C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabExercise04_29", "LabExercise4_29\LabExercise4_29.vcxproj", "{626747EC-C0F5-4A53-A116-37CB321A1A6C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment9_Player", "Assignment9_Player\Assignment9_Player.vcxproj", "{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment09_Player", "Assignment9_Player\Assignment9_Player.vcxproj", "{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assignment10_Student", "Assignment10_Student\Assignment10_Student.vcxproj", "{A83A567D-1F8E-40DC-9F18-147727E6C99E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -193,6 +195,16 @@ Global
 		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Release|x64.Build.0 = Release|x64
 		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Release|x86.ActiveCfg = Release|Win32
 		{006AD1C8-DCBD-40F1-BFB3-9598549B3F15}.Release|x86.Build.0 = Release|Win32
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Debug|x64.ActiveCfg = Debug|x64
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Debug|x64.Build.0 = Debug|x64
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Debug|x86.ActiveCfg = Debug|Win32
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Debug|x86.Build.0 = Debug|Win32
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Release|Any CPU.ActiveCfg = Release|Win32
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Release|x64.ActiveCfg = Release|x64
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Release|x64.Build.0 = Release|x64
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Release|x86.ActiveCfg = Release|Win32
+		{A83A567D-1F8E-40DC-9F18-147727E6C99E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
