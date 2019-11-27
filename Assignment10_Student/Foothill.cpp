@@ -1,3 +1,13 @@
+/*
+* Class: CS2A
+* Description: Edit the Student and StudentArrayUtilities classes.
+* Test the classes by initializing 4 Student arrays to sort
+* and print the median.
+* Due date: Dec 6, 2019
+* Name: Alina Li
+* File name: Foothill.cpp
+*/
+
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -76,7 +86,8 @@ int main()
 	{
 		Student("Hunt", "Hugh", 90), Student("Stevens", "Lloyd", 100),
 		Student("Payne", "Matilda", 177),  Student("Hunter", "Madison", 120),
-		Student("Chavez", "Georgina", 88),  Student("Cunnings","Annabelle", 150),
+		Student("Chavez", "Georgina", 88),  
+		Student("Cunnings","Annabelle", 150),
 		Student("Simmons", "Ellie", 78),  Student("O'Gallagher", "Maya", 340),
 		Student("Alvarez", "Casey", 133),  Student("Richards", "Darcy", 71),
 		Student("Reyes", "Kayla", 200), Student("Berry", "Kathie", 341),
@@ -88,8 +99,10 @@ int main()
 	{
 		Student("Hunt", "Hugh", 90), Student("Stevens", "Lloyd", 100),
 		Student("Payne", "Matilda", 177),  Student("Hunter", "Madison", 120),
-		Student("Chavez", "Georgina", 88),  Student("Cunnings","Annabelle", 150),
-		Student("Simmons", "Ellie", 78),  Student("O'Gallagher", "Maya", 340),
+		Student("Chavez", "Georgina", 88), 
+		Student("Cunnings","Annabelle", 150),
+		Student("Simmons", "Ellie", 78),  
+		Student("O'Gallagher", "Maya", 340),
 		Student("Alvarez", "Casey", 133),  Student("Richards", "Darcy", 71),
 		Student("Reyes", "Kayla", 200), Student("Berry", "Kathie", 341),
 		Student("Simpson", "Bart", 55), Student("Webb", "Dennis", 241),
@@ -100,55 +113,65 @@ int main()
 		Student("Hunt", "Hugh", 90)
 	};
 
+	// array 4
+	cout << "Cannot initialize an empty array. (Array 4)" << endl;
+
 	// print the array
 	cout << StudentArrayUtilities::toString("-------- Array 2, size " 
-		+ to_string(ARR2_LEN) + ", before modification ---------", arr2, ARR2_LEN);
+		+ to_string(ARR2_LEN) + ", before modification ---------", 
+		arr2, ARR2_LEN);
 	cout << endl;
 
 	// sort and print array by default sortkey
 	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
 	cout << StudentArrayUtilities::toString("-------- Array 2, size "
-		+ to_string(ARR2_LEN) + ", sorted by default ---------", arr2, ARR2_LEN);
+		+ to_string(ARR2_LEN) + ", sorted by default ---------", 
+		arr2, ARR2_LEN);
 	cout << endl;
 
 	// sort and print array by first name
 	Student::setSortKey(Student::SORT_BY_FIRST);
 
-	cout << Student::getSortKey() << endl; // ---------------------------------
-
 	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
 	cout << StudentArrayUtilities::toString("-------- Array 2, size "
-		+ to_string(ARR2_LEN) + ", sorted by first name ---------", arr2, ARR2_LEN);
-
-	cout << Student::getSortKey() << endl; // ---------------------------------
+		+ to_string(ARR2_LEN) + ", sorted by first name ---------", 
+		arr2, ARR2_LEN);
 
 	cout << endl;
 
 	// sort and print array by points
 	Student::setSortKey(Student::SORT_BY_POINTS);
 
-	cout << Student::getSortKey() << endl; // ---------------------------------
-
 	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
 	cout << StudentArrayUtilities::toString("-------- Array 2, size "
-		+ to_string(ARR2_LEN) + ", sorted by points ---------", arr2, ARR2_LEN);
-
-	cout << Student::getSortKey() << endl; // ---------------------------------
+		+ to_string(ARR2_LEN) + ", sorted by points ---------", 
+		arr2, ARR2_LEN);
 
 	cout << endl;
 
 	// set sortkey to first name, call and display median
 	Student::setSortKey(Student::SORT_BY_FIRST);
-	cout << "Median: " << StudentArrayUtilities::getMedianDestructive(arr2, ARR2_LEN) << endl;
+	cout << "Median: " 
+		<< StudentArrayUtilities::getMedianDestructive(arr2, ARR2_LEN) 
+		<< endl;
 
 	// print sortkey value
 	cout << "Sort key value: " << Student::getSortKey() << endl << endl;
-
+	if (Student::getSortKey() == Student::SORT_BY_FIRST)
+	{
+		cout << "Sort key value successfully preserved." << endl;
+	}
+	else
+	{
+		cout << "Sort key value has incorrectly changed." << endl;
+	}
+	cout << endl;
 	// print the medians of the other three arrays
-	cout << "Median of Array 1: " 
+	cout << "Median of Array 1 (large and odd): " 
 		<< StudentArrayUtilities::getMedianDestructive(arr1, ARR1_LEN) << endl;
-	cout << "Median of Array 3: " 
+	cout << "Median of Array 3 (array length is 1): " 
 		<< StudentArrayUtilities::getMedianDestructive(arr3, ARR3_LEN) << endl;
+	cout << "Could not initialize Array 4 with length 0." << endl;
 
 	return 0;
 }
@@ -231,7 +254,8 @@ string Student::toString()
 bool Student::setSortKey(int key)
 {
 	// if it is a valid key
-	if (key == SORT_BY_FIRST || key == SORT_BY_LAST || key == SORT_BY_POINTS)
+	if (key == SORT_BY_FIRST || key == SORT_BY_LAST 
+		|| key == SORT_BY_POINTS)
 	{
 		sortKey = key;
 		return true;
@@ -267,7 +291,8 @@ bool Student::validPoints( int testPoints )
 // print the array with string as a title for the message box
 // this is somewhat controversial - we may or may not want an I/O
 // methods in this class.  we'll accept it today
-string StudentArrayUtilities::toString(string title, Student data[], int arraySize)
+string StudentArrayUtilities::toString(string title, Student data[], 
+	int arraySize)
 {
 	string output = title + "\n";
 
@@ -288,7 +313,8 @@ void StudentArrayUtilities::arraySort(Student array[], int arraySize)
 }
 
 // returns the median of the total points values in the array
-double StudentArrayUtilities::getMedianDestructive(Student array[], int arraySize)
+double StudentArrayUtilities::getMedianDestructive(Student array[], 
+	int arraySize)
 {
 	// check for empty array case
 	if (arraySize == 0)
@@ -315,7 +341,8 @@ double StudentArrayUtilities::getMedianDestructive(Student array[], int arraySiz
 	{
 		int index1 = (arraySize - 1) / 2;
 		int index2 = arraySize / 2; 
-		median = ((double) array[index1].getTotalPoints() + array[index2].getTotalPoints()) / 2.0;
+		median = ((double) array[index1].getTotalPoints() 
+			+ array[index2].getTotalPoints()) / 2.0;
 	}
 
 	// for odd numbered arrays
@@ -354,31 +381,90 @@ void StudentArrayUtilities::mySwap(Student &a, Student &b)
 // end of StudentArrayUtilities method definitions  --------------
 
 /* ------------------------------ run ----------------------------
+Cannot initialize an empty array. (Array 4)
+-------- Array 2, size 16, before modification ---------
+  Hunt, Hugh points: 90
+  Stevens, Lloyd points: 100
+  Payne, Matilda points: 177
+  Hunter, Madison points: 120
+  Chavez, Georgina points: 88
+  Cunnings, Annabelle points: 150
+  Simmons, Ellie points: 78
+  O'Gallagher, Maya points: 340
+  Alvarez, Casey points: 133
+  Richards, Darcy points: 71
+  Reyes, Kayla points: 200
+  Berry, Kathie points: 341
+  Simpson, Bart points: 55
+  Webb, Dennis points: 241
+  Hawkins, Zelda points: 190
+  Rozenburg, Cary points: 83
 
-Before:
-  smith, fred points: 95
-  bauer, jack points: 123
-  jacobs, carrie points: 195
-  renquist, abe points: 148
-  zz-error, trevor points: 108
-  perry, fred points: 225
-  loceff, fred points: 44
-  stollings, pamela points: 452
-  charters, rodney points: 295
-  cassar, john points: 321
 
-After:
-  bauer, jack points: 123
-  cassar, john points: 321
-  charters, rodney points: 295
-  jacobs, carrie points: 195
-  loceff, fred points: 44
-  perry, fred points: 225
-  renquist, abe points: 148
-  smith, fred points: 95
-  stollings, pamela points: 452
-  zz-error, trevor points: 108
+-------- Array 2, size 16, sorted by default ---------
+  Alvarez, Casey points: 133
+  Berry, Kathie points: 341
+  Chavez, Georgina points: 88
+  Cunnings, Annabelle points: 150
+  Hawkins, Zelda points: 190
+  Hunt, Hugh points: 90
+  Hunter, Madison points: 120
+  O'Gallagher, Maya points: 340
+  Payne, Matilda points: 177
+  Reyes, Kayla points: 200
+  Richards, Darcy points: 71
+  Rozenburg, Cary points: 83
+  Simmons, Ellie points: 78
+  Simpson, Bart points: 55
+  Stevens, Lloyd points: 100
+  Webb, Dennis points: 241
 
-Press any key to continue . . .
+
+-------- Array 2, size 16, sorted by first name ---------
+  Cunnings, Annabelle points: 150
+  Simpson, Bart points: 55
+  Rozenburg, Cary points: 83
+  Alvarez, Casey points: 133
+  Richards, Darcy points: 71
+  Webb, Dennis points: 241
+  Simmons, Ellie points: 78
+  Chavez, Georgina points: 88
+  Hunt, Hugh points: 90
+  Berry, Kathie points: 341
+  Reyes, Kayla points: 200
+  Stevens, Lloyd points: 100
+  Hunter, Madison points: 120
+  Payne, Matilda points: 177
+  O'Gallagher, Maya points: 340
+  Hawkins, Zelda points: 190
+
+
+-------- Array 2, size 16, sorted by points ---------
+  Simpson, Bart points: 55
+  Richards, Darcy points: 71
+  Simmons, Ellie points: 78
+  Rozenburg, Cary points: 83
+  Chavez, Georgina points: 88
+  Hunt, Hugh points: 90
+  Stevens, Lloyd points: 100
+  Hunter, Madison points: 120
+  Alvarez, Casey points: 133
+  Cunnings, Annabelle points: 150
+  Payne, Matilda points: 177
+  Hawkins, Zelda points: 190
+  Reyes, Kayla points: 200
+  Webb, Dennis points: 241
+  O'Gallagher, Maya points: 340
+  Berry, Kathie points: 341
+
+
+Median: 126.5
+Sort key value: 88
+
+Sort key value successfully preserved.
+
+Median of Array 1 (large and odd): 133
+Median of Array 3 (array length is 1): 90
+Could not initialize Array 4 with length 0.
 
 ---------------------------------------------------------------- */
