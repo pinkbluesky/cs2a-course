@@ -1,5 +1,6 @@
 /*
 * Class: CS2A
+* Programming Assignment 10: Single Dimensional Arrays
 * Description: Edit the Student and StudentArrayUtilities classes.
 * Test the classes by initializing 4 Student arrays to sort
 * and print the median.
