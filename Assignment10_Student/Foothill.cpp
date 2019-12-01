@@ -75,14 +75,13 @@ const string Student::DEFAULT_NAME = "zz-error";
 int Student::sortKey = Student::SORT_BY_LAST;
 
 // constant initialization for main method
-static const int ARR1_LEN = 15;
-static const int ARR2_LEN = 16;
-static const int ARR3_LEN = 1;
-static const int ARR4_LEN = 0;
+static const int ODD_ARR_LEN = 15;
+static const int EVEN_ARR_LEN = 16;
+static const int SMALL_ARR_LEN = 1;
 
 int main()
 {
-	Student arr1[ARR1_LEN]
+	Student oddArr[ODD_ARR_LEN]
 	{
 		Student("Hunt", "Hugh", 90), Student("Stevens", "Lloyd", 100),
 		Student("Payne", "Matilda", 177),  Student("Hunter", "Madison", 120),
@@ -95,7 +94,7 @@ int main()
 		Student("Hawkins", "Zelda", 190)
 	};
 	
-	Student arr2[ARR2_LEN]
+	Student evenArr[EVEN_ARR_LEN]
 	{
 		Student("Hunt", "Hugh", 90), Student("Stevens", "Lloyd", 100),
 		Student("Payne", "Matilda", 177),  Student("Hunter", "Madison", 120),
@@ -108,55 +107,52 @@ int main()
 		Student("Simpson", "Bart", 55), Student("Webb", "Dennis", 241),
 		Student("Hawkins", "Zelda", 190), Student("Rozenburg", "Cary", 83)
 	};
-	Student arr3[ARR3_LEN]
+	Student smallArr[SMALL_ARR_LEN]
 	{
 		Student("Hunt", "Hugh", 90)
 	};
 
-	// array 4
-	cout << "Cannot initialize an empty array. (Array 4)" << endl;
-
 	// print the array
-	cout << StudentArrayUtilities::toString("-------- Array 2, size " 
-		+ to_string(ARR2_LEN) + ", before modification ---------", 
-		arr2, ARR2_LEN);
+	cout << StudentArrayUtilities::toString("-------- Even Array, size " 
+		+ to_string(EVEN_ARR_LEN) + ", before modification ---------",
+		evenArr, EVEN_ARR_LEN);
 	cout << endl;
 
 	// sort and print array by default sortkey
-	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
-	cout << StudentArrayUtilities::toString("-------- Array 2, size "
-		+ to_string(ARR2_LEN) + ", sorted by default ---------", 
-		arr2, ARR2_LEN);
+	StudentArrayUtilities::arraySort(evenArr, EVEN_ARR_LEN);
+	cout << StudentArrayUtilities::toString("-------- Even Array, size "
+		+ to_string(EVEN_ARR_LEN) + ", sorted by default ---------",
+		evenArr, EVEN_ARR_LEN);
 	cout << endl;
 
 	// sort and print array by first name
 	Student::setSortKey(Student::SORT_BY_FIRST);
 
-	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
-	cout << StudentArrayUtilities::toString("-------- Array 2, size "
-		+ to_string(ARR2_LEN) + ", sorted by first name ---------", 
-		arr2, ARR2_LEN);
+	StudentArrayUtilities::arraySort(evenArr, EVEN_ARR_LEN);
+	cout << StudentArrayUtilities::toString("-------- Even Array, size "
+		+ to_string(EVEN_ARR_LEN) + ", sorted by first name ---------",
+		evenArr, EVEN_ARR_LEN);
 
 	cout << endl;
 
 	// sort and print array by points
 	Student::setSortKey(Student::SORT_BY_POINTS);
 
-	StudentArrayUtilities::arraySort(arr2, ARR2_LEN);
-	cout << StudentArrayUtilities::toString("-------- Array 2, size "
-		+ to_string(ARR2_LEN) + ", sorted by points ---------", 
-		arr2, ARR2_LEN);
+	StudentArrayUtilities::arraySort(evenArr, EVEN_ARR_LEN);
+	cout << StudentArrayUtilities::toString("-------- Even Array, size "
+		+ to_string(EVEN_ARR_LEN) + ", sorted by points ---------",
+		evenArr, EVEN_ARR_LEN);
 
 	cout << endl;
 
 	// set sortkey to first name, call and display median
 	Student::setSortKey(Student::SORT_BY_FIRST);
 	cout << "Median: " 
-		<< StudentArrayUtilities::getMedianDestructive(arr2, ARR2_LEN) 
+		<< StudentArrayUtilities::getMedianDestructive(evenArr, EVEN_ARR_LEN)
 		<< endl;
 
 	// print sortkey value
-	cout << "Sort key value: " << Student::getSortKey() << endl << endl;
+	cout << "Sort key value: " << Student::getSortKey() << endl;
 	if (Student::getSortKey() == Student::SORT_BY_FIRST)
 	{
 		cout << "Sort key value successfully preserved." << endl;
@@ -167,11 +163,12 @@ int main()
 	}
 	cout << endl;
 	// print the medians of the other three arrays
-	cout << "Median of Array 1 (large and odd): " 
-		<< StudentArrayUtilities::getMedianDestructive(arr1, ARR1_LEN) << endl;
-	cout << "Median of Array 3 (array length is 1): " 
-		<< StudentArrayUtilities::getMedianDestructive(arr3, ARR3_LEN) << endl;
-	cout << "Could not initialize Array 4 with length 0." << endl;
+	cout << "Median of Odd Array, size " << ODD_ARR_LEN << ": "
+		<< StudentArrayUtilities::getMedianDestructive(oddArr, ODD_ARR_LEN) 
+		<< endl;
+	cout << "Median of Small Array, size " << SMALL_ARR_LEN << ": "
+		<< StudentArrayUtilities::getMedianDestructive(smallArr, SMALL_ARR_LEN) 
+		<< endl;
 
 	return 0;
 }
@@ -381,8 +378,7 @@ void StudentArrayUtilities::mySwap(Student &a, Student &b)
 // end of StudentArrayUtilities method definitions  --------------
 
 /* ------------------------------ run ----------------------------
-Cannot initialize an empty array. (Array 4)
--------- Array 2, size 16, before modification ---------
+-------- Even Array, size 16, before modification ---------
   Hunt, Hugh points: 90
   Stevens, Lloyd points: 100
   Payne, Matilda points: 177
@@ -401,7 +397,7 @@ Cannot initialize an empty array. (Array 4)
   Rozenburg, Cary points: 83
 
 
--------- Array 2, size 16, sorted by default ---------
+-------- Even Array, size 16, sorted by default ---------
   Alvarez, Casey points: 133
   Berry, Kathie points: 341
   Chavez, Georgina points: 88
@@ -420,7 +416,7 @@ Cannot initialize an empty array. (Array 4)
   Webb, Dennis points: 241
 
 
--------- Array 2, size 16, sorted by first name ---------
+-------- Even Array, size 16, sorted by first name ---------
   Cunnings, Annabelle points: 150
   Simpson, Bart points: 55
   Rozenburg, Cary points: 83
@@ -439,7 +435,7 @@ Cannot initialize an empty array. (Array 4)
   Hawkins, Zelda points: 190
 
 
--------- Array 2, size 16, sorted by points ---------
+-------- Even Array, size 16, sorted by points ---------
   Simpson, Bart points: 55
   Richards, Darcy points: 71
   Simmons, Ellie points: 78
@@ -460,11 +456,9 @@ Cannot initialize an empty array. (Array 4)
 
 Median: 126.5
 Sort key value: 88
-
 Sort key value successfully preserved.
 
-Median of Array 1 (large and odd): 133
-Median of Array 3 (array length is 1): 90
-Could not initialize Array 4 with length 0.
+Median of Odd Array, size 15: 133
+Median of Small Array, size 1: 90
 
 ---------------------------------------------------------------- */
