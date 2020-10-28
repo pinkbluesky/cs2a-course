@@ -1,10 +1,14 @@
 #include <iostream>
-using namespace std;                 
+using namespace std;            
 
 int main()
 {
-	double numbers[5.0];
-	numbers[0] = 1;
-
+	char letter[5] = { 'o', 'k', 'c', 'e', 'g' };
+	for (int i = 3; i >= 0; i--)
+	{
+		cout << letter[i];
+	}
+	cout << endl;
 	return 0;
 }
+
